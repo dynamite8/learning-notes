@@ -2,6 +2,10 @@
 
 Some notes on Objective-C concepts or syntax that I frequently have to look up.  I am making it easier to find them in one place.
 
+## Apple API
+
+[API Reference](https://developer.apple.com/reference/)
+
 ### Content Sizing Priorities
 
 * Content Hugging Priority - "Stay close to me"
@@ -121,6 +125,13 @@ References:
 * [NSUrlConnection to NSUrlSession Background](https://www.objc.io/issues/5-ios7/from-nsurlconnection-to-nsurlsession/)
 * [NSURLSession Tutorial](https://www.raywenderlich.com/110458/nsurlsession-tutorial-getting-started)
 
-## Apple API
+## NSOperation
 
-[API Reference](https://developer.apple.com/reference/)
+Specify the priority of the operation in queue
+
+```Objective-C
+
+NSOperation operation = ...
+operation.queuePriority = NSOperationQueuePriorityLow;
+
+```
