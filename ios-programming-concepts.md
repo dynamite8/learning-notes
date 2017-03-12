@@ -47,3 +47,10 @@ NSDictionary *parameters = [credential toJSONDictionary];
 @end
 
 ```
+
+
+## Author
+
+Original Author
+
+Jenny Chang Ho (jchangho@grubhub.com)

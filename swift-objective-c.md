@@ -116,4 +116,10 @@ Reference: [NSHipster Namespacing](http://nshipster.com/namespacing/)
 
 * Do we prefix classes in Swift? **Yes** to avoid conflicts in Objective-C potentially.  Refer to compatibility section to resolve conflicts.
 * Do we add space after class name ? ```swift class MyClass : NSObject```
-*
+
+
+## Author
+
+Original Author
+
+Jenny Chang Ho (jchangho@grubhub.com)

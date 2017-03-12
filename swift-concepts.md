@@ -47,3 +47,10 @@ Tips
 
 Reference
 * [How to be an iOS Time Lord Talk by Ameir Al-Zoubi](https://cocoaheads.tv/how-to-be-an-ios-time-lord-by-ameir-al-zoubi/)
+
+
+## Author
+
+Original Author
+
+Jenny Chang Ho (jchangho@grubhub.com)

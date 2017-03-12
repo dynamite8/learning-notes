@@ -135,3 +135,10 @@ NSOperation operation = ...
 operation.queuePriority = NSOperationQueuePriorityLow;
 
 ```
+
+
+## Author
+
+Original Author
+
+Jenny Chang Ho (jchangho@grubhub.com)
