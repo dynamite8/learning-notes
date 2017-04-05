@@ -136,6 +136,15 @@ operation.queuePriority = NSOperationQueuePriorityLow;
 
 ```
 
+### Initializing NSDictionary
+
+```Objective-C
+
+NSDictionary *originalValues = @{ @"city" : place.city,
+                                  @"latitude" : place.latitude,
+                                  // etc.
+                                };
+```
 
 ## Author
 

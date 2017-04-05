@@ -117,6 +117,60 @@ Reference: [NSHipster Namespacing](http://nshipster.com/namespacing/)
 * Do we prefix classes in Swift? **Yes** to avoid conflicts in Objective-C potentially.  Refer to compatibility section to resolve conflicts.
 * Do we add space after class name ? ```swift class MyClass : NSObject```
 
+### Extending protocols with default implementation
+
+In Swift, you can implement shared functionality for all classes that conforms to the protocol. However, the methods are not accessible from Objective-C.
+
+```swift
+
+@objc public protocol DataProtocol {
+
+    /// Returns dictionary representation of the data
+    var dictionary: Dictionary<String, Any> { get }Â
+
+    /// Add optional variables to the payload.
+    ///
+    /// - Parameter optionalVars: optional Dictionary<String, Any> of variables to append to event payload.
+    func appendOptionalVars(_ optionalVars: Dictionary<String, Any>?)
+}
+
+/// Shared functionality for all classes that conforms to DataProtocol
+extension DataProtocol {
+
+  public func appendOptionalVars(_ optionalVars: Dictionary<String, Any>?) {
+
+      if let keys = optionalVars?.keys {
+          for key in keys {
+              if let value = optionalVars?[key] {
+                  addParameter(key: key, value: value)
+              }
+          }
+      }
+  }
+}
+
+```
+
+### Optional Int?
+
+Objective-C does not recognize optional Int.  When it's not an optional int in Swift, it's bridged as NSInteger.  As a workaround, I created NSNumber variable and updated the setter to set a private Int?
+
+```Swift
+
+private var _number: Int?
+public var number: NSNumber? {
+    get {
+        return _number as NSNumber?
+    }
+    set(newNumber) {
+        _number = newNumber?.intValue
+    }
+}
+```
+
+Reference:
+* [Can swift method defined on extensions on protocols accessed in Objective-C? NO](http://stackoverflow.com/questions/32762841/can-swift-method-defined-on-extensions-on-protocols-accessed-in-objective-c)
+* [Ray Wenderlich on Protocol Oriented Programming](https://www.raywenderlich.com/148448/introducing-protocol-oriented-programming)
 
 ## Author
 
